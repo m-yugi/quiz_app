@@ -2,6 +2,7 @@ package com.yugi.quiz_app.Controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,30 +22,27 @@ public class questonController {
     private dataAcessService dataService;
 
     @GetMapping("/")
-    public List<questions> getAllQuestions() {
+    public ResponseEntity<List<questions>> getAllQuestions() {
         return dataService.getAllQuestions();
     }
 
     @PostMapping("/")
-    public String addQuestion(@RequestBody questions quiz_question) {
-        dataService.addQuestion(quiz_question);
-        return "data saved";
+    public ResponseEntity<String> addQuestion(@RequestBody questions quiz_question) {
+        return dataService.addQuestion(quiz_question);
     }
 
     @PutMapping("/")
-    public questions updateQuestion(@RequestBody questions updated_Question) {
-        dataService.updateQuestion(updated_Question);
-        return updated_Question;
+    public ResponseEntity<questions> updateQuestion(@RequestBody questions updated_Question) {
+        return dataService.updateQuestion(updated_Question);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteQuestion(@PathVariable int id) {
-        dataService.deleteQuestion(id);
-        return "Question deleted";
+    public ResponseEntity<String> deleteQuestion(@PathVariable int id) {
+        return dataService.deleteQuestion(id);
     }
 
     @GetMapping("/category/{category}")
-    public List<questions> findQuestionsByCategory(@PathVariable String category) {
+    public ResponseEntity<List<questions>> findQuestionsByCategory(@PathVariable String category) {
         return dataService.findQuestionsByCategory(category);
     }
 

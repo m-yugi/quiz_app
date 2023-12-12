@@ -2,18 +2,20 @@ package com.yugi.quiz_app.services;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+
 import com.yugi.quiz_app.Entities.questions;
 
 public interface dataAcessService {
-    public List<questions> getAllQuestions();
+    public ResponseEntity<List<questions>> getAllQuestions();
 
-    public void addQuestion(questions quiz_question);
+    public ResponseEntity<String> addQuestion(questions quiz_question);
 
-    public void updateQuestion(questions updated_Question);
+    public ResponseEntity<questions> updateQuestion(questions updated_Question);
 
-    public void deleteQuestion(int id);
+    public ResponseEntity<String> deleteQuestion(int id);
 
-    public List<questions> findQuestionsByCategory(String category);
+    public ResponseEntity<List<questions>> findQuestionsByCategory(String category);
 
     public List<questions> findRandomQuestions(String category, int size);
 }
