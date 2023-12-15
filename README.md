@@ -1,4 +1,4 @@
-# Quiz App
+ # Quiz App
 ***
 
 ## Overview
@@ -13,7 +13,7 @@ This a quiz App that has endpoints to create a quiz write and submit the quiz an
 
 ## Technologies Used
 
->-Spring Initializr
+>- Spring Initializr
 >- Spring MVC
 >- Monodb
 >- Apache-Tomcat
