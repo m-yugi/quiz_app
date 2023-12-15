@@ -3,7 +3,7 @@
 
 ## Overview
 
-This a quiz App that has endpoints to create a quiz write and submit the quiz and create questions based on the topics, We can perform all the CRUD operations on the questions database and we can give quizzes using the API
+This a quiz App that has endpoints to create a quiz write and submit the quiz and create questions based on the topics, We can perform all the CRUD operations on the questions database and we can give quizzes using the API, this app uses MongoDB as its data base 
 
 ## Features
 
